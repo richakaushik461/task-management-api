@@ -1,5 +1,4 @@
 ﻿services:
-  # Backend API Service
   - type: web
     name: task-management-api
     runtime: node
@@ -29,13 +28,3 @@
         value: 100
       - key: LOG_LEVEL
         value: info
-
-  # Frontend Static Site
-  - type: static
-    name: task-manager-frontend
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    publishPath: dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://task-management-api.onrender.com/api/v1
